@@ -17,8 +17,6 @@ RAG的一个最简单实现DEMO，支持本地和远程模型向量化。具体�
    - `pnpm run local` 执行本地模型向量化
    - `pnpm run remote` 执行ChatGPT模型向量化
 
-注意！在切换本地和远程的时候，需要执行 `sudo pnpm clean` 删除 `chroma` 数据库再执行。这是由于使用的向量化函数不同，输出的向量维度也不一样。当插入向量维度不一样的向量数据时，`chroma` 会报 ` invalidDimension` 的错误。
-
 
 ## 目录结构
 

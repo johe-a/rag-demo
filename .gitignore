@@ -1,3 +1,4 @@
 chroma
 node_modules
 chroma.log
+.env

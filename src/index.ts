@@ -24,7 +24,7 @@ async function init() {
   // 初始化向量数据库
   const chromaClient = new ChromaDBClient()
   // 创建和加载集合，将自定义embedding类传入
-  await chromaClient.load(embedder)
+  await chromaClient.load(embedder, mode)
   return {docs, chromaClient}
 }
 

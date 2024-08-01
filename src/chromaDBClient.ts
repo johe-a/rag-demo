@@ -6,9 +6,9 @@ export default class ChromaDBClient {
   constructor() {
     this.client = new ChromaClient()
   }
-  async load(embedder: IEmbeddingFunction) {
+  async load(embedder: IEmbeddingFunction, mode: string) {
     this.collection = await this.client.getOrCreateCollection({
-      name: 'my_collection',
+      name: `${mode}_collection`,
       embeddingFunction: embedder
     })
   }

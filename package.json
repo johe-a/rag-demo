@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf ./chroma && rm -rf ./chroma.log",
-    "start:chroma": "sudo chroma run --path ./chroma",
+    "start:chroma": "chroma run --path ./chroma",
     "remote": "ts-node ./src/index.ts remote",
     "local": "ts-node ./src/index.ts local"
   },

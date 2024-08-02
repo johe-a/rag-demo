@@ -1,12 +1,12 @@
 import { ChatCompletion } from 'openai/resources/index'
 import ChromaDBClient from './chromaDBClient.ts'
 import { loadDocuments } from './docs/loadDocuments.ts'
-import CustomEmbedding from './embedding/remoteEmbedding.ts'
+import RemoteEmbedding from './embedding/remoteEmbedding.ts'
 import { largeLanguageModelChat } from './openai/chat.ts'
 import { addPreTrainData } from './common/addPretrainData.ts'
 import { recallQuery } from './common/recallQuery.ts'
 import { ReadableStream } from "node:stream/web"
-import DefaultEmbedding from './embedding/localEmbedding.ts'
+import LocalEmbedding from './embedding/localEmbedding.ts'
 
 const mode = process.argv.slice(2)[0]
 if (mode === 'local') {
@@ -20,7 +20,7 @@ async function init() {
   // 加载vant文件目录
   const docs = await loadDocuments()
   // 自定义embedding函数
-  const embedder = mode === 'local' ? new DefaultEmbedding() : new CustomEmbedding()
+  const embedder = mode === 'local' ? new LocalEmbedding() : new RemoteEmbedding()
   // 初始化向量数据库
   const chromaClient = new ChromaDBClient()
   // 创建和加载集合，将自定义embedding类传入

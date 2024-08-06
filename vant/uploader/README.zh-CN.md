@@ -8,7 +8,7 @@
 
 ```js
 import Vue from 'vue';
-import { Uploader } from '@fe/zand';
+import { Uploader } from 'vant';
 
 Vue.use(Uploader);
 ```
@@ -124,7 +124,7 @@ export default {
 ```
 
 ```js
-import { Toast } from '@fe/zand';
+import { Toast } from 'vant';
 
 export default {
   methods: {
@@ -143,11 +143,11 @@ export default {
 ```
 
 ```js
-import { Toast } from '@fe/zand';
+import { Toast } from 'vant';
 
 export default {
   methods: {
-    isOverSize() {
+    isOverSize(file) {
       const maxSize = file.type === 'image/jpeg' ? 500 * 1024 : 1000 * 1024;
       return file.size >= maxSize;
     },
@@ -200,7 +200,7 @@ export default {
 ```
 
 ```js
-import { Toast } from '@fe/zand';
+import { Toast } from 'vant';
 
 export default {
   methods: {
@@ -247,7 +247,7 @@ export default {
 ```
 
 ```js
-import { Toast } from '@fe/zand';
+import { Toast } from 'vant';
 
 export default {
   data() {
